@@ -1,0 +1,6 @@
+.body {
+  width: 100%;
+  background-color: blue;
+  min-height: 200px;
+  box-sizing: border-box;
+}
