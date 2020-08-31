@@ -1,10 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { DotoList } from "./doto-list/containers/DotoList";
+import { TodoList } from "./doto-list/containers/TodoList";
 
-function App() {
-  return <DotoList />;
+export const App = () => {
+  return <TodoList />;
 }
-
-export default App;

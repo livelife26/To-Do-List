@@ -1,7 +1,7 @@
 import "./style.scss";
 import React, { useState } from "react";
 
-export const DotoList = () => {
+export const TodoList = () => {
   const [dotoList, setDotoList] = useState([]);
 
   const addItem = () => {
