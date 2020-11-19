@@ -1,10 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .app__layout {
   box-sizing: border-box;
   background: #e3e9ff;
@@ -110,7 +105,7 @@ img {
       height: 0;
       width: 0;
 
-      /* When the checkbox is checked, add a blue background */
+      /* When the checkbox is checked, add a purple background */
       &:checked ~ .todolist-item__checkmark {
         background-color: #af7eeb;
 
@@ -228,36 +223,36 @@ img {
 @media (min-width: 996px) {
   .todolist {
     &__layout {
-      width: 900px;
-      height: 720px;
+      width: 840px;
+      height: 760px;
     }
 
     &__title {
-      height: 80px;
-      margin-top: -100px;
+      height: 60px;
+      margin-top: -80px;
 
       &-content {
-        padding: 10px 0 0;
-        font-size: 3em;
+        padding: 5px 0 0;
+        font-size: 2.8em;
       }
     }
 
     &__list {
-      height: 720px;
-      margin: 25px 0 0;
+      height: 700px;
+      margin: 18px 0 0;
     }
 
     &__add {
       &-button {
-        font-size: 32px;
-        width: 240px;
-        height: 62px;
+        font-size: 28px;
+        width: 220px;
+        height: 52px;
       }
     }
 
     /* Customize the label (the container) */
     &-item {
-      height: 36px;
+      height: 28px;
 
       &__label {
         /* Style the checkmark/indicator */
@@ -269,18 +264,18 @@ img {
 
       /* Create a custom checkbox */
       &__checkmark {
-        height: 30px;
-        width: 30px;
+        height: 26px;
+        width: 26px;
       }
 
       &__form {
         width: 75%;
-        font-size: 28px;
+        font-size: 24px;
       }
 
       &__remove {
-        width: 30px;
-        height: 30px;
+        width: 26px;
+        height: 26px;
       }
     }
   }
