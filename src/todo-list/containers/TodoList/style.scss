@@ -141,6 +141,11 @@
       text-align: center;
       font-style: italic;
       opacity: 0.5;
+
+      &--checked {
+        text-decoration: line-through;
+        text-decoration-color: #af7eeb;
+      }
     }
 
     &__remove {

@@ -109,7 +109,11 @@ export const TodoList = () => {
                 </label>
                 <input
                   placeholder="Type your new task!"
-                  className={listItemClassName("form")}
+                  className={
+                    listItem.isChecked && listItem.value
+                      ? listItemClassName("form", { checked: true })
+                      : listItemClassName("form")
+                  }
                   type="text"
                   value={listItem.value}
                   onChange={handleEdit}
