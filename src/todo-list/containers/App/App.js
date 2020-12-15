@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoList } from "./todo-list/containers/TodoList";
+import { TodoList } from "../TodoList";
 
 export const App = () => {
   return <TodoList />;
