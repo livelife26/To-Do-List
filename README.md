@@ -5,8 +5,8 @@
 Online demo is available [here](https://livelife26.github.io/To-Do-List/).
 
 ## Features
-- **Create, edit, check & remove tasks**
-- **Adaptive layout (mobile, tablet, desktop)**
+- Create, edit, check & remove tasks
+- Adaptive layout (mobile, tablet, desktop)
 
 ## Technologies
 - **React & CRA**  
