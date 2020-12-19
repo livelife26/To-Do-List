@@ -1,0 +1,144 @@
+.todolist {
+  &__layout {
+    display: grid;
+    grid-template-rows: 50px auto;
+    row-gap: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 18px;
+    padding-bottom: 36px;
+
+    @media screen and (min-width: 550px) {
+      grid-template-rows: 60px auto;
+      row-gap: 25px;
+      padding: 36px;
+      padding-bottom: 72px;
+    }
+
+    @media screen and (min-width: 996px) {
+      width: 840px;
+      height: 760px;
+      padding: 0;
+    }
+  }
+
+  &__title-layout {
+    margin: 0;
+    padding: 0;
+    background: #af7eeb;
+    line-height: 50px;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+
+    @media screen and (min-width: 550px) {
+      line-height: 60px;
+      font-size: 48px;
+    }
+  }
+
+  &__list-layout {
+    min-height: 0;
+  }
+
+  &__list {
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+  }
+
+  &__add-button-layout {
+    position: relative;
+    margin: -25px 0 0;
+    text-align: center;
+  }
+
+  &__add-button {
+    width: 180px;
+    height: 48px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    border-radius: 25px;
+    background: #af7eeb;
+    font-size: 22px;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #895ebd;
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: 550px) {
+      font-size: 28px;
+      width: 220px;
+      height: 52px;
+    }
+  }
+}
+
+.todolist-item {
+  &__layout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 22px;
+    margin: 10px 0;
+
+    @media screen and (min-width: 550px) {
+      height: 28px;
+    }
+  }
+
+  &__textfield {
+    all: unset;
+    width: 70%;
+    opacity: 0.5;
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+
+    @media screen and (min-width: 550px) {
+      width: 75%;
+      font-size: 28px;
+    }
+
+    @media screen and (min-width: 996px) {
+      width: 75%;
+      font-size: 24px;
+    }
+
+    &--checked {
+      &:not(:placeholder-shown) {
+        text-decoration: line-through;
+        text-decoration-color: #af7eeb;
+      }
+    }
+  }
+
+  &__delete {
+    all: unset;
+    background: url("../../assets/images/delete.png") no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    opacity: 0.45;
+
+    @media screen and (min-width: 550px) {
+      width: 26px;
+      height: 26px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.57;
+      cursor: pointer;
+    }
+  }
+}

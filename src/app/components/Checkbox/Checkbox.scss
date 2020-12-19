@@ -1,0 +1,80 @@
+/* Customize the label (the container) */
+.checkbox {
+  &__label {
+    display: block;
+    position: relative;
+    margin: 0 0 18px 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @media screen and (min-width: 550px) {
+      margin: 0 0 26px 0;
+    }
+
+    /* On mouse-over, add a grey background color */
+    &:hover input ~ .checkbox__mark {
+      background-color: rgb(134, 134, 134);
+    }
+
+    /* Style the mark/indicator */
+    & .checkbox__mark:after {
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%) rotateZ(45deg);
+      width: 3px;
+      height: 6px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+
+      @media screen and (min-width: 550px) {
+        width: 7px;
+        height: 13px;
+      }
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  &__box {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    /* When the checkbox is checked, add a purple background */
+    &:checked ~ .checkbox__mark {
+      background-color: #af7eeb;
+
+      /* Show the mark when checked */
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  /* Create a custom checkbox */
+  &__mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: rgb(173, 172, 172);
+
+    /* Create the mark/indicator (hidden when not checked) */
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    @media screen and (min-width: 550px) {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}

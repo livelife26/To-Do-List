@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-import { cn } from "../../../helpers/classname";
+import { Checkbox } from '../../components/Checkbox';
 
-import "./style.scss";
+import { cn } from "../../helpers/classname";
+
+import "./TodoList.scss";
 
 const todolistClassName = cn("todolist");
 const listItemClassName = cn("todolist-item");
@@ -17,8 +19,8 @@ export const TodoList = () => {
     setTodoList((todoList) => {
       const emptyItem = {
         id: todoList.itemId,
-        value: "",
         isChecked: false,
+        value: "",
       };
 
       return {
@@ -29,11 +31,9 @@ export const TodoList = () => {
   };
 
   return (
-    <div className="app__layout">
-      <div className={todolistClassName("layout")}>
-        <div className={todolistClassName("title")}>
-          <h1 className={todolistClassName("title-content")}>To do</h1>
-        </div>
+    <div className={todolistClassName("layout")}>
+      <h1 className={todolistClassName("title-layout")}>To do</h1>
+      <div className={todolistClassName("list-layout")}>
         <div className={todolistClassName("list")}>
           {todoList.items.map((listItem) => {
             const handleCheck = () => {
@@ -92,41 +92,26 @@ export const TodoList = () => {
             };
 
             return (
-              <div
-                key={listItem.id}
-                className={`${todolistClassName(
-                  "item"
-                )} ${listItemClassName()}`}
-              >
-                <label className={listItemClassName("label")}>
-                  <input
-                    className={listItemClassName("checkbox")}
-                    type="checkbox"
-                    checked={listItem.isChecked}
-                    onChange={handleCheck}
-                  />
-                  <span className={listItemClassName("checkmark")}></span>
-                </label>
+              <div key={listItem.id} className={listItemClassName("layout")}>
+                <Checkbox checked={listItem.isChecked} onChange={handleCheck} />
                 <input
                   placeholder="Type your new task!"
-                  className={
-                    listItem.isChecked && listItem.value
-                      ? listItemClassName("form", { checked: true })
-                      : listItemClassName("form")
-                  }
+                  className={listItemClassName("textfield", {
+                    checked: listItem.isChecked,
+                  })}
                   type="text"
                   value={listItem.value}
                   onChange={handleEdit}
                 />
                 <button
-                  className={listItemClassName("remove")}
+                  className={listItemClassName("delete")}
                   onClick={handleDelete}
                 ></button>
               </div>
             );
           })}
         </div>
-        <div className={todolistClassName("add")}>
+        <div className={todolistClassName("add-button-layout")}>
           <button
             className={todolistClassName("add-button")}
             onClick={handleAdd}
